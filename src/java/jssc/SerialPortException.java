@@ -1,5 +1,5 @@
 /* jSSC (Java Simple Serial Connector) - serial port communication library.
- * © Alexey Sokolov (scream3r), 2010-2011.
+ * © Alexey Sokolov (scream3r), 2010-2014.
  *
  * This file is part of jSSC.
  *
@@ -25,63 +25,71 @@
 package jssc;
 
 /**
- *
+ * 
  * @author scream3r
  */
 public class SerialPortException extends Exception {
 
-    final public static String TYPE_PORT_ALREADY_OPENED = "Port already opened";
-    final public static String TYPE_PORT_NOT_OPENED = "Port not opened";
-    final public static String TYPE_CANT_SET_MASK = "Can't set mask";
-    final public static String TYPE_LISTENER_ALREADY_ADDED = "Event listener already added";
-    final public static String TYPE_LISTENER_THREAD_INTERRUPTED = "Event listener thread interrupted";
-    final public static String TYPE_CANT_REMOVE_LISTENER = "Can't remove event listener, because listener not added";
-    /**
-     * @since 0.8
-     */
-    final public static String TYPE_PARAMETER_IS_NOT_CORRECT = "Parameter is not correct";
-    /**
-     * @since 0.8
-     */
-    final public static String TYPE_NULL_NOT_PERMITTED = "Null not permitted";
-    /**
-     * @since 0.9.0
-     */
-    final public static String TYPE_PORT_BUSY = "Port busy";
-    /**
-     * @since 0.9.0
-     */
-    final public static String TYPE_PORT_NOT_FOUND = "Port not found";
+  final public static String TYPE_PORT_ALREADY_OPENED = "Port already opened";
+  final public static String TYPE_PORT_NOT_OPENED = "Port not opened";
+  final public static String TYPE_CANT_SET_MASK = "Can't set mask";
+  final public static String TYPE_LISTENER_ALREADY_ADDED = "Event listener already added";
+  final public static String TYPE_LISTENER_THREAD_INTERRUPTED = "Event listener thread interrupted";
+  final public static String TYPE_CANT_REMOVE_LISTENER = "Can't remove event listener, because listener not added";
+  /**
+   * @since 0.8
+   */
+  final public static String TYPE_PARAMETER_IS_NOT_CORRECT = "Parameter is not correct";
+  /**
+   * @since 0.8
+   */
+  final public static String TYPE_NULL_NOT_PERMITTED = "Null not permitted";
+  /**
+   * @since 0.9.0
+   */
+  final public static String TYPE_PORT_BUSY = "Port busy";
+  /**
+   * @since 0.9.0
+   */
+  final public static String TYPE_PORT_NOT_FOUND = "Port not found";
+  /**
+   * @since 2.2.0
+   */
+  final public static String TYPE_PERMISSION_DENIED = "Permission denied";
+  /**
+   * @since 2.3.0
+   */
+  final public static String TYPE_INCORRECT_SERIAL_PORT = "Incorrect serial port";
 
-    private String portName;
-    private String methodName;
-    private String exceptionType;
+  private final String portName;
+  private final String methodName;
+  private final String exceptionType;
 
-    public SerialPortException(String portName, String methodName, String exceptionType){
-        super("Port name - " + portName + "; Method name - " + methodName + "; Exception type - " + exceptionType + ".");
-        this.portName = portName;
-        this.methodName = methodName;
-        this.exceptionType = exceptionType;
-    }
+  public SerialPortException(String portName, String methodName, String exceptionType) {
+    super("Port name - " + portName + "; Method name - " + methodName + "; Exception type - " + exceptionType + ".");
+    this.portName = portName;
+    this.methodName = methodName;
+    this.exceptionType = exceptionType;
+  }
 
-    /**
-     * Getting port name during operation with which the exception was called
-     */
-    public String getPortName(){
-        return portName;
-    }
+  /**
+   * Getting port name during operation with which the exception was called
+   */
+  public String getPortName() {
+    return portName;
+  }
 
-    /**
-     * Getting method name during execution of which the exception was called
-     */
-    public String getMethodName(){
-        return methodName;
-    }
+  /**
+   * Getting method name during execution of which the exception was called
+   */
+  public String getMethodName() {
+    return methodName;
+  }
 
-    /**
-     * Getting exception type
-     */
-    public String getExceptionType(){
-        return exceptionType;
-    }
+  /**
+   * Getting exception type
+   */
+  public String getExceptionType() {
+    return exceptionType;
+  }
 }

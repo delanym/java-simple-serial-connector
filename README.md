@@ -1,3 +1,19 @@
+jSSC 2.8.2 Modified
+
+20160804.1305
+
+Fixed an issue serial port was not closed as a result of an exception when disabling the port mask
+events.
+
+20160309.1510
+
+Fixed an issue where data could be lost when using software flow control.
+
+20130219.1600
+
+When USB devices are removed, the event is not know.
+When an error occurs during the readBytes() method, we not return an empty byte array to notify the gateway of the event.
+
 jSSC-0.9.0 Release version (21.12.2011)
 
 This version contains native libs for Windows(x86, x86-64), Linux(x86, x86-64), Solaris(x86, x86-64), Mac OS X(x86, x86-64, PPC, PPC64).
